@@ -1,0 +1,24 @@
+<div class="dashboard">
+  <nav>
+    <span>Conta: {{ accountId }}</span>
+    <button class="exit" (click)="logout()">Sair</button>
+  </nav>
+
+  <app-balance-view [balance]="balance"></app-balance-view>
+
+  <div class="actions-grid">
+    <button (click)="operation('deposit')">Depositar</button>
+    <button (click)="operation('withdraw')">Sacar</button>
+    <button (click)="operation('transfer')">Transferir</button>
+  </div>
+
+  <app-modal 
+    *ngIf="showModal"
+    [title]="modalConfig.title"
+    [showDestination]="modalConfig.showDest"
+    [errorMessage]="errorMessage" 
+    [loading]="isProcessing"
+    (confirmed)="onModalConfirm($event)"
+    (cancelled)="showModal = false">
+  </app-modal>
+</div>

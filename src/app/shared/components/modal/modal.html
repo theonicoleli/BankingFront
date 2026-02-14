@@ -1,0 +1,24 @@
+<div class="modal-overlay" (click)="close()">
+  <div class="modal-card" (click)="$event.stopPropagation()">
+    <h3>{{ title }}</h3>
+
+    <div *ngIf="errorMessage" class="error-banner">
+      {{ errorMessage }}
+    </div>
+
+    <div class="form-group">
+      <input type="number" [(ngModel)]="value" placeholder="Valor (R$)" [disabled]="loading">
+    </div>
+
+    <div *ngIf="showDestination" class="form-group">
+      <input type="text" [(ngModel)]="destination" placeholder="Conta de destino" [disabled]="loading">
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" (click)="close()" [disabled]="loading">Cancelar</button>
+      <button class="btn-confirm" (click)="confirm()" [disabled]="loading">
+        {{ loading ? 'Processando...' : 'Confirmar' }}
+      </button>
+    </div>
+  </div>
+</div>

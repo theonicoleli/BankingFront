@@ -1,0 +1,50 @@
+.dashboard { 
+    padding: 20px; 
+    max-width: 600px; 
+    margin: auto; 
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 1.2rem; 
+}
+
+.exit {
+    padding: 8px 16px; 
+    border-radius: 8px;
+    border: 1px solid #3182ce;
+    background: white;
+    color: #3182ce;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.exit:hover {
+    background: #ebf8ff;
+}
+
+.actions-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 10px; 
+    margin-top: 2rem; 
+}
+
+.actions-grid button { 
+    padding: 15px; 
+    border-radius: 8px; 
+    border: 1px solid #3182ce; 
+    background: white; 
+    color: #3182ce; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background 0.2s, color 0.2s;
+}
+
+.actions-grid button:hover { 
+    background: #3182ce; 
+    color: white; 
+}

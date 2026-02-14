@@ -1,0 +1,18 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  border: 1px solid #f0f0f0;
+}
+
+.label { 
+    font-size: 0.75rem; 
+    color: #718096; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+}
+
+.content { 
+    margin-top: 0.5rem; 
+}

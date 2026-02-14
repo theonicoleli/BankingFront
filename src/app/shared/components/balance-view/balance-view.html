@@ -1,0 +1,8 @@
+<app-info-card label="Saldo Disponível">
+  <div class="balance-container">
+    <h2 class="amount">{{ visible ? (balance | currency:'BRL') : 'R$ •••••' }}</h2>
+    <button (click)="visible = !visible" class="eye-btn">
+      {{ visible ? 'Ocultar' : 'Mostrar' }}
+    </button>
+  </div>
+</app-info-card>
