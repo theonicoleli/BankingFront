@@ -35,9 +35,17 @@ export class DashboardComponent implements OnInit {
     this.load();
   }
 
-  load() { this.bank.getBalance(this.accountId).subscribe(b => this.balance = b); }
+  load() { 
+    this.bank.getBalance(this.accountId).subscribe(b => {
+      this.balance = b;
+      this.cdr.detectChanges();
+    }); 
+  }
 
-  logout() { this.auth.logout(); this.router.navigate(['/login']); }
+  logout() { 
+    this.auth.logout(); 
+    this.router.navigate(['/login']); 
+  }
 
   operation(type: 'deposit' | 'withdraw' | 'transfer') {
     this.errorMessage = null;
@@ -53,6 +61,7 @@ export class DashboardComponent implements OnInit {
   onModalConfirm(event: {amount: number, destination?: string}) {
     this.isProcessing = true;
     this.errorMessage = null;
+    
     const req: EventRequest = this.buildRequest(event);
 
     this.bank.postEvent(req).subscribe({
@@ -60,10 +69,12 @@ export class DashboardComponent implements OnInit {
         this.showModal = false;
         this.isProcessing = false;
         this.load();
+        this.cdr.detectChanges();
       },
       error: (err) => {
         this.isProcessing = false;
         this.handleApiError(err);
+        this.cdr.detectChanges();
       }
     });
   }
@@ -77,7 +88,6 @@ export class DashboardComponent implements OnInit {
     };
 
     this.errorMessage = errorMessages[err.status] ?? "Ocorreu um erro inesperado.";
-    this.cdr.detectChanges();
   }
 
   private buildRequest(event: {amount: number, destination?: string}): EventRequest {
