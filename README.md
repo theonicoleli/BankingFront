@@ -78,7 +78,7 @@ ng serve
 
 The application is deployed and available at the following link:
 
-📍 **Production URL:** [[https://banking-front-lime.vercel.app](https://banking-front-nix06h3od-theonicolelis-projects.vercel.app/)]
+📍 **Production URL:** [https://banking-front-lime.vercel.app](https://banking-front-nix06h3od-theonicolelis-projects.vercel.app/)
 
 ---
 
@@ -170,7 +170,7 @@ ng serve
 
 A aplicação está publicada e disponível no link abaixo:
 
-📍 **URL de Produção:** [[https://banking-front-lime.vercel.app](https://banking-front-nix06h3od-theonicolelis-projects.vercel.app/)]
+📍 **URL de Produção:** [https://banking-front-lime.vercel.app](https://banking-front-nix06h3od-theonicolelis-projects.vercel.app/)
 
 ---
 
